@@ -25,7 +25,7 @@ SECRET_KEY = 'c_b#im@$umjm8gd+(7^9*@#ldzz$zzalg+13tzuf8%e=or0+$5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['z0','localhost','z1','z2','z3','192.168.35.245','118.221.137.114']
+ALLOWED_HOSTS = ['z0','localhost','z1','z2','z3','balck','192.168.35.245','118.221.137.114']
 
 # Application definition
 
