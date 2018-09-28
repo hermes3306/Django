@@ -1,0 +1,46 @@
+{% include "tot/head.html" %}
+   
+<div>
+<canvas id="myChart"></canvas>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+	<script>
+		var ctx = document.getElementById('myChart').getContext('2d');
+		var chart = new Chart(ctx, {
+		type: 'line',
+		data: {
+			 labels: [  {{legend}}  ],
+		datasets: [
+
+			{ 	label: "KW:",
+				backgroundColor: '{{ rgbs.kw }}', borderColor: '{{ rgbs.kw }}',
+				data: [  {{ moneys.kw }}   ], fill: false }, 
+			{ 	label: "WR1:",
+				backgroundColor: '{{rgbs.wr1 }}', borderColor: '{{ rgbs.wr1 }}',
+				data: [  {{ moneys.wr1 }}   ], fill: false }, 
+			{ 	label: "WR2:",
+				backgroundColor: '{{rgbs.wr2 }}', borderColor: '{{ rgbs.wr2 }}',
+				data: [  {{ moneys.wr2 }}   ], fill: false }, 
+			{ 	label: "HA:",
+				backgroundColor: '{{ rgbs.ha }}', borderColor: '{{ rgbs.ha }}',
+				data: [  {{ moneys.ha }}   ], fill: false }, 
+			{ 	label: "HD:",
+				backgroundColor: '{{ rgbs.hd }}', borderColor: '{{ rgbs.hd }}',
+				data: [  {{ moneys.hd }}   ], fill: false }, 
+			{ 	label: "WO:",
+				backgroundColor: '{{ rgbs.wo }}', borderColor: '{{ rgbs.wo }}',
+				data: [  {{ moneys.wo }}   ], fill: false }, 
+			{ 	label: "XI:",
+				backgroundColor: '{{ rgbs.xi }}', borderColor: '{{ rgbs.xi }}',
+				data: [  {{ moneys.xi }}   ], fill: false }, 
+			{ 	label: "OK:",
+				backgroundColor: '{{ rgbs.ok }}', borderColor: '{{ rgbs.ok }}',
+				data: [  {{ moneys.ok }}   ], fill: false }, 
+			]
+		},
+	options: {}
+	});
+	</script>
+</div>
+
+{% include "tot/showtab.html" %}
+{% include "tot/tail.html" %}

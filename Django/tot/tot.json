@@ -1,0 +1,14 @@
+{
+  "DEFAULT": {
+    "PROGRAM": "TOT",
+    "VERSION": "1.0"
+  },
+  "MQTT": {
+    "SERVER": "localhost",
+    "PORT":1883 
+  },
+  "DEPT": {
+    "HR": {"NAME": "Hong", "AGE": 20},
+    "FI": {"NAME": "KIM", "AGE": 30}
+  }
+}

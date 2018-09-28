@@ -1,0 +1,11 @@
+{% include "tot/head.html" %}
+
+<div class="w3-container">
+<form  class="w3-container" action="/tot/totf" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input class="w3-button w3-black" type="submit" value="Submit">
+</form>
+</div>
+
+{% include "tot/tail.html" %}

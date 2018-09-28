@@ -1,0 +1,20 @@
+django-admin startproject mysite
+python3 manage.py startapp myapp
+vi mysite/urls.py
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('tot/', include('tot.urls')),
+    path('tot2/', include('tot2.urls')),
+    path('book/', include('book.urls')),
+   
+]
+vi myapp/models.py
+vi mysite/settings.py
+INSTALLED_APPS = [
+    'book.apps.BookConfig',
+    'tot.apps.TotConfig',
+    'tot2.apps.TotConfig',
+
+python3 manage.py makemigrations tot2
+python3 manage.py migrate
+

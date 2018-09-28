@@ -1,0 +1,49 @@
+{% load static %}
+{% if ts %}
+<div class="w3-container">
+ <table class="w3-table">
+    <tr class="w3-light-grey">
+        <th>yymmdd</th>
+        <th>money(S)</th>
+        <th>money(L)</th>
+        <th>+/-(L)</th>
+        <th>money(P)</th>
+        <th>+/-(P)</th>
+    </tr>
+    {% for t in ts %}
+    <tr>
+        <td> <a href="/tot/{{t.yymmdd}}/"> {{ t.yymmdd }} </a>
+                    <a href="/tot/pub/{{t.yymmdd}}"><img height="10" width="10"
+                    src="{% static 'tot/images/pub.png' %}"></img></a> </td>
+        <td> {{ t.money1 }} </td>
+        <td> {{ t.money2 }} </td>
+        <td> 
+			{% if t.statusL == "Sync" %}
+				<a href="/tot/sync/{{t.yymmdd}}/laravel">
+				<img height="16" width="16"
+                    src="{% static 'tot/images/sync.png' %}"></img></a>
+			{% elif t.statusL == "OK" %}
+				<font color="green"> OK </font>
+			{% else %}
+				{{t.statusL}}
+			{% endif %}
+		</td>
+        <td> {{ t.money3 }} </td>
+        <td> 
+			{% if t.statusP == "Sync" %}
+				<a href="/tot/sync/{{t.yymmdd}}/pg">
+				<img height="16" width="16"
+                    src="{% static 'tot/images/sync.png' %}"></img></a>
+			{% elif t.statusP == "OK" %}
+				<font color="green"> OK </font>
+			{% else %}
+				{{t.statusP}}
+			{% endif %}
+		</td>
+    </tr>
+    {% endfor %}
+{% else %}
+    <p>No Tot data.</p>
+</div>
+{% endif %}
+

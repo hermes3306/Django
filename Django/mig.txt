@@ -1,0 +1,18 @@
+cat tot/models.py
+class SM(models.Model):
+    yymmdd = models.CharField(max_length=10)
+    hhmmss = models.CharField(max_length=10)
+    type   = models.CharField(max_length=10)
+    val    = models.IntegerField(default=0)
+    pubdate= models.DateTimeField('date published')
+    def __str__(self):
+        return self.type
+
+python3 manage.py makemigrations tot
+python3 manage.py migrate
+cat tot/admin.py
+from django.contrib import admin
+
+from .models import Question
+
+admin.site.register(Question)
