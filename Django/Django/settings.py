@@ -78,6 +78,10 @@ DATABASES = {
 		'ENGINE': 'django.db.backends.sqlite3',
 		'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 	},
+	'backup': {
+		'ENGINE': 'django.db.backends.sqlite3',
+		'NAME': os.path.join(BASE_DIR, 'backup.sqlite3'),
+	},
 	'laravel': {
 		'NAME': 'laravel',
 		'ENGINE': 'django.db.backends.mysql',
