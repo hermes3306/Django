@@ -16,4 +16,5 @@ class TotForm(forms.Form):
 
 class getjsonForm(forms.Form): 
 	url 		= forms.URLField(initial='http://z1:9000/tot/getjson')
-	target 		= forms.CharField(initial='default')
+	choicelist	= [('default','default'),('laravel','laravel'),('pg','pg'),('all','all')]
+	target		= forms.ChoiceField(choices=choicelist)
