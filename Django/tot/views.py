@@ -220,6 +220,8 @@ def get_name(request):
 		form = NameForm()
 	return render(request, 'tot/name.html', {'form': form})
 
+
+
 def totf(request):
 	ts = Tot.objects.all().aggregate(Max('yymmdd'))
 	yymmdd = ts['yymmdd__max']

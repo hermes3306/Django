@@ -11,9 +11,19 @@ from .forms import TotForm
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.core import serializers
+from django.http import JsonResponse
+import json
+import simplejson
 
-
-
+def getjson(request):
+	ts = Tot.objects.values('id','yymmdd','accnt','money').annotate()
+	msg = [] 
+	for t in ts:
+		j = {'id': t['id'], 'accnt': t['accnt'], 'money': t['money'], 'yymmdd': t['yymmdd']}
+		msg.append(j)
+	jmsg = json.dumps(msg)
+	jjmsg = {'Tot': jmsg}
+	return JsonResponse(jjmsg)
 
 def serialize(request):
     template = loader.get_template('tot/serialize.html')
@@ -39,6 +49,7 @@ def serialize(request):
         ts.save(using="pg")
 
     for ts in serializers.deserialize("json", jso):
+        print(ts)
         ts.save(using="laravel")
 
     context = {

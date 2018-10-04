@@ -13,3 +13,7 @@ class TotForm(forms.Form):
 	xi 			= forms.IntegerField(label='xi:')
 	hd 			= forms.IntegerField(label='hd:')
 	ok 			= forms.IntegerField(label='ok:')
+
+class getjsonForm(forms.Form): 
+	url 		= forms.URLField(initial='http://z1:9000/tot/getjson')
+	target 		= forms.CharField(initial='default')
