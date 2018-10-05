@@ -1,2 +1,2 @@
-#cd /home/jhpark/Code/Django
+#cd /home/pi/code/Django/Django
 python3 manage.py runserver 0:9000
